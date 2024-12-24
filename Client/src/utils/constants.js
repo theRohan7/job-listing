@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://job-listing-718u.onrender.com/api/v1" ;
