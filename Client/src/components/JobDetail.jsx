@@ -23,7 +23,7 @@ function JobDetail({ jobId }) {
     fetchJobById(jobId);
   }, [jobId]);
 
-  console.log("Job DETAIL: ", jobDetail);
+  
 
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full p-3">
