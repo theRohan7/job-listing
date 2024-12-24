@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Navbar() {
+function Navbar({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleQueryChange = (e) => {
@@ -8,7 +8,7 @@ function Navbar() {
   };
 
   const handleSearch = () => {
-    console.log("Searching for jobs:", searchQuery);
+    onSearch(searchQuery);
   };
 
   return (

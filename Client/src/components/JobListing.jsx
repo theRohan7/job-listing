@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { getJobs } from "../services/job.js";
 
-function JobListing({ onJobSelect }) {
+function JobListing({ onJobSelect, searchQuery }) {
   const [loading, setLoading] = useState(false);
   const [jobs, setJobs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,11 +24,14 @@ function JobListing({ onJobSelect }) {
     fetchJobs();
   }, []);
 
+  const filteredJobs = jobs.filter((job) => job.location.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
 
-  const totalPages = Math.ceil(jobs.length / jobsPerPage);
+  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
@@ -46,7 +49,7 @@ function JobListing({ onJobSelect }) {
     onJobSelect(jobId);
   }
 
-  console.log(jobs);
+
   
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
