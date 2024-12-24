@@ -64,7 +64,7 @@ function JobListing({ onJobSelect }) {
             {currentJobs.length > 0 ? (
               <ul className="space-y-4">
                 {currentJobs.map((job) => (
-                  <li key={job._id} className="p-4 bg-gray-50 shadow rounded" onClick={()=>handleJobClick(job._id)} >
+                  <li key={job._id} className="p-4 bg-gray-50 shadow rounded cursor-pointer" onClick={()=>handleJobClick(job._id)} >
                     <h3 className="text-lg font-bold">{job.title}</h3>
                     <p className="text-sm text-gray-500">{job.location}</p>
                     <p className="text-sm text-green-600">{job.seniority_level}</p>
