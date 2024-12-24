@@ -28,7 +28,7 @@ function JobDetail({ jobId }) {
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full p-3">
       {jobDetail === null ? (
-        <div>Click on a job to see details</div>
+        <h2 className="text-2xl text-gray-500">Click on a job to see details.</h2>
       ) : (
         <div className="h-full">
           {loading ? (
@@ -53,12 +53,12 @@ function JobDetail({ jobId }) {
                 <p className="mt-2 text-green-600">
                     {jobDetail.location}
                 </p>
-                <span className="mt-2 text-gray-600 bg-pink-200 border rounded absolute px-3 right-10">
+                <span className="mt-2 text-gray-600 bg-blue-200 border rounded absolute px-3 right-10">
                     {jobDetail.employment_type}
                 </span>
                 <a href={jobDetail.job_link} className="mt-2 text-blue-600" > LinkedIn</a>
 
-                <button className="mt-4 bg-pink-500 text-white py-2 px-4 rounded-3xl absolute right-5 bottom-24" >Apply Now</button>
+                <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-3xl absolute right-5 bottom-24" >Apply Now</button>
             </div>
 
             <div className="flex flex-col border-b mt-4 border-gray-400 pb-4">

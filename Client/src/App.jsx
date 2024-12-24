@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <nav className="bg-pink-500 h-16">
+      <nav className="bg-blue-500 h-16">
         <Navbar />
       </nav>
       <main>

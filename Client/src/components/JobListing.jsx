@@ -77,12 +77,12 @@ function JobListing({ onJobSelect }) {
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex items-center justify-between mt-2 mx-3 ">
+          <div className="flex items-center justify-between mt-2 mb-2 mx-3 ">
             
             <button
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
-              className={`px-4 py-2 bg-gray-300 rounded ${
+              className={`px-4 py-2 bg-blue-300 rounded-2xl ${
                 currentPage === 1 && 'opacity-50 cursor-not-allowed'
               }`}
             >
@@ -91,7 +91,7 @@ function JobListing({ onJobSelect }) {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 bg-gray-300 rounded ${
+              className={`px-4 py-2 bg-blue-300 rounded-2xl ${
                 currentPage === totalPages && 'opacity-50 cursor-not-allowed'
               }`}
             >
